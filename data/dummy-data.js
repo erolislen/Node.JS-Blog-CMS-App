@@ -19,7 +19,7 @@ async function populate() {
         password: await bcrypt.hash("123456", 10),
         url: slugField("Erol İŞLEN"),
         description: "Açıklama Alanı",
-        image: "author.png",
+        image: "user.png",
         ipAddress: "127.0.0.1",
         approved: 1,
       },
@@ -31,7 +31,7 @@ async function populate() {
         password: await bcrypt.hash("123456", 10),
         url: slugField("Test User"),
         description: "Açıklama Alanı",
-        image: "author.png",
+        image: "user.png",
         ipAddress: "127.0.0.1",
         approved: 1,
       },
@@ -84,7 +84,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "3.jpeg",
         homePage: true,
         approved: true,
         authorId: 2,
@@ -96,7 +96,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "3.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
@@ -108,7 +108,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "3.jpeg",
         homePage: true,
         approved: true,
         authorId: 2,
@@ -120,7 +120,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "4.jpeg",
         homePage: true,
         approved: true,
         authorId: 2,
@@ -132,7 +132,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "4.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
@@ -144,7 +144,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "4.jpeg",
         homePage: true,
         approved: true,
         authorId: 2,
@@ -156,7 +156,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "3.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
@@ -168,7 +168,7 @@ async function populate() {
           "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
         description:
           "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "2.jpeg",
+        image: "4.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,

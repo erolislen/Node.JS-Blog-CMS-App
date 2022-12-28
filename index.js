@@ -1,6 +1,3 @@
-//config
-const config = require('config');
-
 // express
 const express = require("express");
 const app = express();
