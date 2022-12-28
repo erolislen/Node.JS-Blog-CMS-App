@@ -1,0 +1,12 @@
+.ck-editor__editable[role="textbox"] {
+  /* editing area */
+  min-height: 200px;
+}
+
+#category {
+  width: 100% !important;
+}
+
+.select2 {
+  width: 100% !important;
+}

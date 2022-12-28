@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+              <a
+                href="/admin/categories"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-arrow-left fa-sm text-white-50"></i> Turn
+                Back</a
+              >
+            </div>
+
+            <div class="card shadow mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12 mt-3">
+                    <form action="" method="POST">
+                      <div class="row mb-3">
+                        <label for="title" class="col-sm-2 col-form-label"
+                          >Category Name</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            id="title"
+                          />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="description" class="col-sm-2 col-form-label"
+                          >Fontawesome icon <br /><a
+                            href="https://fontawesome.com/icons"
+                            target="_blank"
+                            ><span class="badge bg-success text-white">Learn More</span></a
+                          ></label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="ex: fa fa-home"
+                            name="icon"
+                            id="title"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <div class="col-sm-8 offset-sm-2">
+                          <button type="submit" class="btn btn-success">
+                            Save Category
+                          </button>
+                          <a href="/admin/categories" class="btn btn-danger">
+                            Cancel
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+              <a
+                href="/admin/blogs"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-arrow-left fa-sm text-white-50"></i> Turn
+                Back</a
+              >
+            </div>
+
+            <form method="post">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Circle Buttons -->
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <input
+                        type="hidden"
+                        name="categoryId"
+                        value="<%= category.id %>"
+                      />
+                      <div class="row mb-3">
+                        <label for="title" class="col-sm-2 col-form-label"
+                          >Title</label
+                        >
+                        <div class="col-sm-8">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            id="name"
+                            value="<%= category.name %> "
+                          />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="description" class="col-sm-2 col-form-label"
+                          >Fontawesome icon <br /><a
+                            href="https://fontawesome.com/icons"
+                            target="_blank"
+                            ><span class="badge bg-success">Learn More</span></a
+                          ></label
+                        >
+                        <div class="col-sm-8">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="ex: fa fa-home"
+                            name="icon"
+                            value="<%= category.icon %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <div class="col-sm-8 offset-sm-2">
+                          <button type="submit" class="btn btn-primary">
+                            Category Update
+                          </button>
+                          <a href="/admin/categories" class="btn btn-danger"
+                            >Cancel</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Circle Buttons -->
+                <div class="card shadow mb-4">
+                  <div class="card-body">
+                    <h3 class="text-center text-dark">
+                      Posts in this category
+                    </h3>
+                 <div class="row">
+                  <% if (blogs.length > 0 ) { %> <% blogs.forEach(blog => { %>
+                  <div class="col-md-4 mt-5">
+                    <div class="card" style="width: 18rem">
+                      <img
+                        src="/static/images/<%= blog.image %> "
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h6 class="card-title"><%= blog.title %></h6>
+                        <a
+                          href="/admin/blogs/<%= blog.id %> "
+                          class="btn btn-primary"
+                          >More Details >></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                
+                  <% }) %> <% } else { %>
+                  <div class="alert alert-danger text-center mt-5">
+                    <i class="fa fa-exclamation-triangle"></i> No posts found
+                    in this category!
+                  </div>
+                  <% } %>
+                  
+                 </div>
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+        console.error(error);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+   
+
+   
+  </body>
+</html>

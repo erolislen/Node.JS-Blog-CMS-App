@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/user/head') %>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <%- include('../_partials/user/navbar') %>
+    <!-- Page header with logo and tagline-->
+    <%- include('../_partials/user/header') %>
+    <!-- Page content-->
+    <div class="container">
+      <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-12 mb-5">
+          <!-- Nested row for non-featured blog posts-->
+          <div class="row">
+            <h1>An unknown error has occurred</h1>
+            <div class="alert alert-danger">
+                Please <a href="/contact">contact</a> the page administrator.
+            </div>
+          </div>
+          <!-- Pagination-->
+        </div>
+      </div>
+    </div>
+    <!-- Footer-->
+    <%- include('../_partials/user/footer') %>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+              <a
+                href="/admin/authors"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-arrow-left fa-sm text-white-50"></i> Turn
+                Back</a
+              >
+            </div>
+
+            <form action="" method="POST" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-lg-8">
+                  <!-- Circle Buttons -->
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <input type="hidden" name="authorId" value="<%= author.id %>">
+                      <input type="hidden" name="image" value="<%= author.image %>">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                              <div class="row mb-3">
+                                <label for="firstName" class="col-sm-5 col-form-label">Firstname</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="firstName" id="firstName" value="<%= author.firstName %>">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                              <label for="username" class="col-sm-5 col-form-label">Username</label>
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" name="username" id="username" value="<%= author.userName %>">
+                              </div>
+                          </div>
+    
+                           
+        
+                            </div>
+                            <div class="col-md-6">
+                             
+                              <div class="row mb-3">
+                                <label for="lastName" class="col-sm-5 col-form-label">Lastname</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="lastName" id="lastName" value="<%= author.lastName %>">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                              <label for="email" class="col-sm-5 col-form-label">Email</label>
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" name="email" id="email" value="<%= author.email %>">
+                              </div>
+                          </div>
+                            </div>
+                        </div>
+
+
+                       
+                       
+    
+                        <div class="row mb-3">
+                            <label for="url" class="col-sm-5 col-form-label">SEO Url</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="url" id="url" value="<%= author.url %>">
+                            </div>
+                        </div>
+    
+    
+                        <div class="row mb-3">
+                            <label for="description" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-12">
+                                <textarea name="description" id="editor" class="form-control" rows="30"><%= author.description %> </textarea>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="image" class="col-form-label">Image</label>
+                            <div class="col-sm-12">
+                                <img id="previewImage" class="mt-2 mb-2" src="/static/images/<%= author.image %>" width="300">
+                                <input type="file" onchange="preview()" id="formFile" class="form-control" name="image"  >
+                            </div>
+                        </div>
+        
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="approved" name="approved" <%= author.approved?"checked":"" %> >
+                                    <label class="form-check-label"  for="approved">
+                                        Status   
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-success btn-block">Author Update</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                $('.js-example-basic-multiple').select2();
+            });
+        </script>    
+
+    <script>
+      function preview() {
+        const preview = document.getElementById("previewImage");
+        preview.src = URL.createObjectURL(event.target.files[0]);
+      }
+      function clearImage() {
+        document.getElementById("formFile").value = null;
+        frame.src = "";
+      }
+    </script>
+  </body>
+</html>

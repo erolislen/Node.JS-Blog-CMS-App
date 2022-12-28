@@ -1,0 +1,19 @@
+
+
+<% if(totalPages > 1) { %> 
+
+<nav aria-label="Pagination">
+    <hr class="my-0" />
+    <ul class="pagination justify-content-start my-4">
+        <li class="page-item"><a class="page-link" href="?page=0" tabindex="-1" aria-disabled="true">First Page</a></li>
+
+        <% for( let i = 0; i < totalPages; i++ ) { %>
+            <li class="page-item  <%= (i == currentPage) ? "active" : "" %> " aria-current="page"><a class="page-link" href="?page=<%= i %>"><%= i+1 %> </a></li>
+        <% } %>
+
+        <li class="page-item"><a class="page-link" href="?page=<%= Number(currentPage) + 1 %> " tabindex="-1" aria-disabled="true">Next</a></li>
+
+    </ul>
+</nav>
+
+<% } %> 

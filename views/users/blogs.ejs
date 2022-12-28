@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/user/head') %>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <%- include('../_partials/user/navbar') %>
+    <!-- Page header with logo and tagline-->
+    <%- include('../_partials/user/header') %>
+    <!-- Page content-->
+    <div class="container">
+      <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+          <% if(blogs.length == 0) { %>
+              <%- include("../_partials/user/no-blog") %> 
+          <% } %> 
+          <div class="row">
+           
+              <% blogs.forEach(blog => { %> 
+                <%-include('../_partials/user/blog-card', blog) %> 
+              <% }) %> 
+              
+              <%-include("../_partials/user/pagination"); %>
+              </div>
+        
+        </div>
+        <!-- Side widgets-->
+        <%- include('../_partials/user/sidebar',{categories, selectedCategory, authors}) %>
+      </div>
+    </div>
+    <!-- Footer-->
+    <%- include('../_partials/user/footer') %>
+  </body>
+</html>

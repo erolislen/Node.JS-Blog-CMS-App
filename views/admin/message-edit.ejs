@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+              <a
+                href="/admin/messages"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-arrow-left fa-sm text-white-50"></i> Turn
+                Back</a
+              >
+            </div>
+
+            <form action="" method="POST">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Circle Buttons -->
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <input
+                        type="hidden"
+                        name="messageId"
+                        value="<%= message.id %>"
+                      />
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="row mb-3">
+                            <label
+                              for="firstName"
+                              class="col-sm-5 col-form-label"
+                              >Firstname</label
+                            >
+                            <div class="col-sm-12">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="firstName"
+                                id="firstName"
+                                readonly
+                                value="<%= message.firstName %>"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <label for="email" class="col-sm-5 col-form-label"
+                              >Email</label
+                            >
+                            <div class="col-sm-12">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="email"
+                                id="email"
+                                readonly
+                                value="<%= message.email %>"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row mb-3">
+                            <label
+                              for="lastName"
+                              class="col-sm-5 col-form-label"
+                              >Lastname</label
+                            >
+                            <div class="col-sm-12">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="lastName"
+                                id="lastName"
+                                readonly
+                                value="<%= message.lastName %>"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <label for="subject" class="col-sm-5 col-form-label"
+                              >Subject</label
+                            >
+                            <div class="col-sm-12">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="subject"
+                                id="subject"
+                                readonly
+                                value="<%= message.subject %>"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="content" class="col-sm-2 col-form-label"
+                          >Content</label
+                        >
+                        <div class="col-sm-12">
+                          <textarea
+                            name="content"
+                            id="editor"
+                            class="form-control"
+                            rows="30"
+                          >
+                            <%= message.content %></textarea
+                          >
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="reply" class="col-sm-2 col-form-label"
+                          >Reply</label
+                        >
+                        <div class="col-sm-12">
+                          <textarea name="reply" class="form-control" rows="5"><%= message.reply %></textarea>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <div class="col-sm-8">
+                          <button type="submit" class="btn btn-success">
+                            Reply Message
+                          </button>
+                          <a href="/admin/messages" class="btn btn-danger">
+                            Cancel
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+        console.error(error);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".js-example-basic-multiple").select2();
+      });
+    </script>
+
+    <script>
+      function preview() {
+        const preview = document.getElementById("previewImage");
+        preview.src = URL.createObjectURL(event.target.files[0]);
+      }
+      function clearImage() {
+        document.getElementById("formFile").value = null;
+        frame.src = "";
+      }
+    </script>
+  </body>
+</html>

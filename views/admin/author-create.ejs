@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+  
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+              <a
+                href="/admin/authors"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-arrow-left fa-sm text-white-50"></i> Turn
+                Back</a
+              >
+            </div>
+
+            <form action="" method="POST" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-lg-8">
+                  <!-- Circle Buttons -->
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <label for="firstName" class="col-sm-4 col-form-label">Firstname</label>
+                                    <div class="col-sm-12">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="firstName"
+                                        id="firstName"
+                                      />
+                                    </div>
+                                  </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <label for="lastName" class="col-sm-4 col-form-label">Lastname</label>
+                                    <div class="col-sm-12">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        name="lastName"
+                                        id="lastName"
+                                      />
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="row mb-3">
+                                <label for="email" class="col-sm-4 col-form-label">Email</label>
+                                <div class="col-sm-12">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    name="email"
+                                    id="email"
+                                  />
+                                </div>
+                              </div>
+                        </div>
+
+                            <div class="col-md-6">
+                              <div class="row mb-3">
+                                  <label for="password" class="col-sm-4 col-form-label">Password</label>
+                                  <div class="col-sm-12">
+                                    <input
+                                      type="password"
+                                      class="form-control"
+                                      name="password"
+                                      id="password"
+                                    />
+                                  </div>
+                                </div>
+                          </div>
+    
+                            
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="row mb-3">
+                                <label for="userName" class="col-sm-4 col-form-label">Username</label>
+                                <div class="col-sm-12">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    name="userName"
+                                    id="userName"
+                                  />
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="description" class="col-sm-2 col-form-label"
+                          >Description</label
+                        >
+                        <div class="col-sm-12">
+                          <textarea
+                            name="description"
+                            id="editor"
+                            class="form-control"
+                          ></textarea>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <div class="row mb-3">
+                        <label for="image" class="col-sm-4 col-form-label">Image</label>
+
+                        <div class="col-sm-12 mt-3">
+                          <img
+                            id="previewImage"
+                            src="/static/images/gallery.png"
+                            class="mt-2 mb-2"
+                            width="300"
+                          />
+
+                          <input
+                            type="file"
+                            class="form-control"
+                            id="formFile"
+                            onchange="preview()"
+                            name="image"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <div class="col-sm-12">
+                          <button
+                            type="submit"
+                            class="btn btn-success btn-block"
+                          >
+                            Save author
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+        console.error(error);
+      });
+    </script>
+    <script>
+      function preview() {
+        const preview = document.getElementById("previewImage");
+        preview.src = URL.createObjectURL(event.target.files[0]);
+      }
+      function clearImage() {
+        document.getElementById("formFile").value = null;
+        frame.src = "";
+      }
+    </script>
+  </body>
+</html>

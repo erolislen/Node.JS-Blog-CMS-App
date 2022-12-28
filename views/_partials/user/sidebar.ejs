@@ -1,0 +1,51 @@
+<div class="col-lg-4">
+    <!-- Search widget-->
+    <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+
+            <form action="/search" method="GET">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="keyword" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                    <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Categories widget-->
+    <div class="card mb-4">
+        <div class="card-header bg-dark text-white">Categories</div>
+        <div class="list-group">
+            <a href="/" class="list-group-item list-group-item-action"><i class="fa fa-list-alt"></i> Tüm Kategoriler</a>
+            <% categories.forEach(function(category) { %>
+            <a
+              href="/blogs/category/<%= category.url %> "
+              class="list-group-item list-group-item-action
+              <%= selectedCategory == category.url ? 'active' : '' %>  "
+              ><i class="<%= category.icon %> "></i> <%= category.name; %>
+            </a>
+            <% }) %>
+          </div>
+    </div>
+    
+    <!-- Side widget-->
+    <ol class="list-group list-group-numbered">
+        <a href="javascript:void()" class="list-group-item list-group-item-action active" aria-current="true">
+            Authors
+          </a>
+
+        <% authors.forEach(author => { %>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><%= author.userName %> </div>
+              <%= moment(author.createdAt).format('Do MMMM, YYYY'); %> 
+            </div>
+            <img src="/static/images/<%= author.image %>" class="img-fluid img-thumbnail" width="40px" alt="...">
+  
+          </li>
+        <% }) %>
+       
+       
+      </ol>
+      
+</div>

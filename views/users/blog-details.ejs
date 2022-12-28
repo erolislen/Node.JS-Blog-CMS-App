@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/user/head') %>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <%- include('../_partials/user/navbar') %>
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
+      <div class="container">
+          <div class="text-center my-5">
+              <h1 class="fw-bolder"><%= blog.title %> </h1>
+              <!-- <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p> -->
+          </div>
+      </div>
+  </header>
+    <!-- Page content-->
+    <div class="container">
+      <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/static/images/<%= blog.image %>" alt="..." />
+            <div class="card-body">
+                <div class="small text-light badge bg-danger">Created at : <%= moment(blog.createdAt).format('Do MMMM, YYYY'); %></div>
+                <div class="small text-light badge bg-primary">Author : <%= blog.author.userName %> </div>
+                <h2 class="card-title mt-4"><%= title %> </h2>
+                <p class="card-text"><%- blog.description %></p>
+            </div>
+        </div>
+        </div>
+        <!-- Side widgets-->
+        <%- include('../_partials/user/sidebar',{categories, selectedCategory, authors})
+        %>
+        
+      </div>
+    </div>
+    <!-- Footer-->
+    <%- include('../_partials/user/footer') %>
+  </body>
+</html>

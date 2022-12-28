@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 mt-3 text-center">
+                  <div class="alert alert-warning">
+                      <p class="mb-3">
+                          <b><%= blog.title %></b> <br> Do you want to delete the blog record named ?
+                      </p>
+                      <form method="post">
+                          <input type="hidden" name="blogId" value="<%= blog.id %>">
+                          <button class="btn btn-danger" type="submit">Yes</button>
+                          <a href="/admin/blogs" class="btn btn-primary">Cancel</a>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+  </body>
+</html>

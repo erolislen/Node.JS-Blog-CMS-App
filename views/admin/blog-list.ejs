@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../_partials/admin/head'); %>
+      <!-- Custom styles for this page -->
+      <link href="/static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  </head>
+
+  <body id="page-top">
+    <div id="wrapper">
+      <%- include('../_partials/admin/sidebar'); %>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%- include('../_partials/admin/topbar'); %>
+
+          <div class="container-fluid">
+
+            <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+          >
+            <h1 class="h3 mb-0 text-gray-800"><%= title %></h1>
+            <a
+              href="/admin/blog/create"
+              class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"
+              ><i class="fas fa-plus-circle fa-sm text-white-50"></i> Add New Blog</a
+            >
+          </div>
+
+            <% if(action!= "undefined" && action == "update") { %>
+              <script>
+                swal("Good job!", "Blog <%= blogId %> Updated", "success");
+              </script>
+              <% } %> <% if(action!= "undefined" && action == "create") { %>
+                <script>
+                  swal("Good job!", "Blog Created", "success");
+                </script>
+              <% } %> <% if(action!= "undefined" && action == "delete") { %>
+                <script>
+                  swal("Good job!", "Blog Deleted", "success");
+                </script>
+              <% } %> <% if(action!= "undefined" && action == "failed") { %>
+                <script>
+                  swal("Good job!", "Transaction error", "error");
+                </script>
+              <% } %>
+
+            <div class="card shadow mb-4">
+             
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Category Name</th>
+                                <th>Approved</th>
+                                <th>Process</th>
+                              </tr>
+                          </thead>
+                        
+                          <tbody>
+                            <% blogs.forEach(blog => { %>
+                              <tr>
+                                <td><%= blog.id %></td>
+                                <td>
+                                  <img
+                                    src="/static/images/<%= blog.image %> "
+                                    width="50px"
+                                    alt="<%= blog.title %>"
+                                    class="img-fluid"
+                                  />
+                                </td>
+                                <td><%= blog.title %></td>
+                                <td>
+                                  <% blog.categories.forEach(category => { %>
+                                  <p><%= category.name %></p>
+                                  <% }) %>
+                                </td>
+                                <td class="text-center">
+                                  
+                                    <a href="/admin/blog/updateStatus/<%= blog.id %>?approved=<%= (blog.approved) ? 1 : 0 %>" class="btn btn-<%= (blog.approved) ? 'success' : 'secondary' %>  btn-circle btn-sm">
+                                      <i class="fas fa-check"></i>
+                                    </a>
+                                 
+                                  
+                                </td>
+                                <td>
+                                  <a
+                                    class="btn btn-sm btn-primary"
+                                    data-toggle="tooltip" data-placement="top" title="Edit"
+                                    href="/admin/blogs/<%= blog.id %> "
+                                    ><i class="fa fa-pencil-alt"></i> </a
+                                  >
+                                  <a
+                                    class="btn btn-sm btn-danger"
+                                    data-toggle="tooltip" data-placement="top" title="Delete"
+                                    href="/admin/blog/delete/<%= blog.id %> "
+                                    ><i class="fa fa-trash"></i> </a
+                                  >
+                                  <a
+                                    class="btn btn-sm btn-success"
+                                    data-toggle="tooltip" data-placement="top" title="View"
+                                    target="_blank"
+                                    href="/blogs/<%= blog.url %> "
+                                    ><i class="fa fa-eye"></i> </a
+                                  >
+                                </td>
+                              </tr>
+                              <% }) %>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <%- include('../_partials/admin/footer'); %>
+      </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <%- include('../_partials/admin/logoutModal'); %> <%-
+    include('../_partials/admin/script'); %>
+
+      <!-- Page level plugins -->
+      <script src="/static/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="/static/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  
+      <!-- Page level custom scripts -->
+      <script src="/static/admin/js/demo/datatables-demo.js"></script>
+
+    
+  </body>
+</html>
