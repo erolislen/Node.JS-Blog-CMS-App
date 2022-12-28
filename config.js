@@ -6,9 +6,9 @@ const config = {
     database: "blogdb",
   },
   email: {
-    username: "info@erolislen.com.tr",
-    password: "dtaktyaoetywbnoc",
-    from: "info@erolislen.com.tr",
+    username: "",
+    password: "",
+    from: "",
   },
 };
 
