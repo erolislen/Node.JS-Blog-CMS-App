@@ -48,139 +48,129 @@ async function populate() {
 
     const categories = await Category.bulkCreate([
       {
-        name: "Web Geliştirme",
+        name: "Blog Category 1",
         icon: "fa fa-home",
-        url: slugField("Web Geliştirme"),
+        url: slugField("Blog Category 1"),
       },
       {
-        name: "Mobil Geliştirme",
+        name: "Blog Category 2",
         icon: "fa fa-laptop",
-        url: slugField("Mobil Geliştirme"),
+        url: slugField("Blog Category 2"),
       },
       {
-        name: "Programlama",
+        name: "Blog Category 3",
         icon: "fa fa-envelope",
-        url: slugField("Programlama"),
+        url: slugField("Blog Category 3"),
       },
     ]);
 
     const blogs = await Blog.bulkCreate([
       {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama"),
+        title: "Example Blog Title 1",
+        url: slugField("Example Blog Title 1"),
         shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         image: "1.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
       },
       {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
+        title: "Example Blog Title 2",
+        url: slugField("Example Blog Title 2"),
         shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "3.jpeg",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "2.jpeg",
         homePage: true,
         approved: true,
         authorId: 2,
       },
       {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
+        title: "Example Blog Title 3",
+        url: slugField("Example Blog Title 3"),
         shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "3.jpeg",
-        homePage: true,
-        approved: true,
-        authorId: 1,
-      },
-      {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
-        shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "3.jpeg",
-        homePage: true,
-        approved: true,
-        authorId: 2,
-      },
-      {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
-        shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "4.jpeg",
-        homePage: true,
-        approved: true,
-        authorId: 2,
-      },
-      {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
-        shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "4.jpeg",
-        homePage: true,
-        approved: true,
-        authorId: 1,
-      },
-      {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
-        shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "4.jpeg",
-        homePage: true,
-        approved: true,
-        authorId: 2,
-      },
-      {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
-        shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         image: "3.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
       },
       {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 2",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 2"),
+        title: "Example Blog Title 4",
+        url: slugField("Example Blog Title 4"),
         shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         image: "4.jpeg",
+        homePage: true,
+        approved: true,
+        authorId: 2,
+      },
+      {
+        title: "Example Blog Title 5",
+        url: slugField("Example Blog Title 5"),
+        shortDescription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "5.jpeg",
+        homePage: true,
+        approved: true,
+        authorId: 2,
+      },
+      {
+        title: "Example Blog Title 6",
+        url: slugField("Example Blog Title 6"),
+        shortDescription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "6.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
       },
       {
-        title: "Python ile Sıfırdan İleri Seviye Python Programlama 3",
-        url: slugField("Python ile Sıfırdan İleri Seviye Python Programlama 3"),
+        title: "Example Blog Title 7",
+        url: slugField("Example Blog Title 7"),
         shortDescription:
-          "Sıfırdan İleri Seviye Python Dersleri.Veritabanı,Veri Analizi,Bot Yazımı,Web Geliştirme(Django)",
-        description:
-          "Python programlamanın popülerliğinden dolayı bir çok yazılımcı ve firma python için kütüphaneler oluşturup python kütüphane havuzunda paylaşmaktadır. Dolayısıyla python dünyasına giriş yaptığımızda işlerimizi kolaylaştıracak bazı imkanlara sahip oluyoruz.",
-        image: "4.jpeg",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "7.jpeg",
+        homePage: true,
+        approved: true,
+        authorId: 2,
+      },
+      {
+        title: "Example Blog Title 8",
+        url: slugField("Example Blog Title 8"),
+        shortDescription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "8.jpeg",
+        homePage: true,
+        approved: true,
+        authorId: 1,
+      },
+      {
+        title: "Example Blog Title 9",
+        url: slugField("Example Blog Title 9"),
+        shortDescription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "9.jpeg",
+        homePage: true,
+        approved: true,
+        authorId: 1,
+      },
+      {
+        title: "Example Blog Title 10",
+        url: slugField("Example Blog Title 10"),
+        shortDescription:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: "10.jpeg",
         homePage: true,
         approved: true,
         authorId: 1,
